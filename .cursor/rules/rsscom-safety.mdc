@@ -1,0 +1,31 @@
+---
+description: RSS.com API safety — draft-only, no destructive calls
+globs:
+  - prepare_episode.py
+  - Makefile
+alwaysApply: true
+---
+
+# RSS.com safety
+
+## Draft-only workflow
+
+- Episodes are always created as **drafts** for manual review in the RSS.com dashboard
+- Never call API endpoints that publish episodes live to Apple Podcasts, Spotify, etc.
+- Never use DELETE endpoints
+
+## Warnings
+
+- Warn if `description.md` exceeds 4000 characters (RSS.com limit)
+- Warn if `explicit: true` but episode content does not appear explicit (or vice versa)
+
+## Allowed operations
+
+- Upload audio via presigned URL
+- Create episode draft with metadata
+- Poll processing status (transcode, transcribe)
+- Get and update transcript (corrections only)
+
+## User guidance on errors
+
+Explain API and file errors in plain English with a specific fix action. Point to the RSS.com dashboard when credentials or settings are wrong.

@@ -1,0 +1,43 @@
+# Copy to podcast.config.yaml and edit once for your show.
+# Cursor can help: "Set up my podcast — my show is called X, host is Y..."
+
+show:
+  name: "My Podcast"       # Your show name
+  host: "Alex"             # Host name (for scripts, not sent to API)
+  language: en
+
+episode:
+  season: 1                # Default season for new episodes
+  type: full               # full | trailer | bonus
+  explicit: false
+
+title:
+  # Placeholders: {number}, {title}, {subtitle}, {show}, {season}
+  # Plus any field you add to episode.yaml (e.g. {guest}, {topic})
+  template: "#{number}: {title}"
+  # Sports example: "#{number}: {home_team} vs {away_team} — {tournament}"
+
+defaults:
+  keywords:
+    - Podcast
+    - Topic
+  locations:
+    subject:
+      search: "New York, United States"
+      type: Region
+    creator:
+      search: "United States"
+      type: Country
+
+transcript:
+  wait: true               # Wait for RSS.com auto-transcription
+  apply_corrections: true  # Apply corrections after transcription
+
+# Global find/replace for auto-transcription typos (show-wide)
+corrections:
+  "John Smith": "Jon Smith"
+  "my podcast": "My Podcast"
+
+description:
+  max_length: 4000
+  from_script: false       # Future: auto-build description from script.md

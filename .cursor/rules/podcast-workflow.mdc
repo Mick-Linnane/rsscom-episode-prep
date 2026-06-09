@@ -1,0 +1,44 @@
+---
+description: Podcast episode prep workflow — scaffold, dry-run, publish drafts only
+globs:
+  - episodes/**
+  - templates/**
+  - podcast.config.yaml
+  - prepare_episode.py
+  - Makefile
+alwaysApply: true
+---
+
+# Podcast workflow
+
+This repo prepares **RSS.com drafts only**. Never publish live episodes via the API.
+
+## New episode
+
+When the user says "new episode", "prepare episode", or "start episode about …", use the **new-episode** skill (`.cursor/skills/new-episode/SKILL.md`).
+
+## File preferences
+
+- Prefer editing **markdown** (`script.md`, `description.md`) over YAML unless metadata is needed
+- `script.md` is for planning only — not sent to RSS.com
+- `description.md` is what gets uploaded as the episode description
+
+## Before publish
+
+Confirm all of the following:
+
+1. MP3 exists (in episode folder or `RSSCOM_AUDIO_DIR`)
+2. `description.md` is non-empty
+3. `make dry-run EPISODE=...` succeeded
+
+Run dry-run before every publish. Offer to run it in the terminal for the user.
+
+## Publish
+
+Use `make publish EPISODE=episodes/...` — never call the RSS.com API to publish live.
+
+After publish, print the dashboard URL from the terminal output.
+
+## Secrets
+
+Never commit `.env`. Never ask the user to paste API keys into chat — they belong in `.env` only.

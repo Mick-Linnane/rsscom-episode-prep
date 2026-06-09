@@ -1,0 +1,4 @@
+# Optional per-episode transcript fixes (merged with global corrections in podcast.config.yaml)
+# Example:
+# "Jane Doe": "Jane Doe"
+# "habit tracking": "habit-tracking"

@@ -1,0 +1,34 @@
+show:
+  name: "My Podcast"
+  host: "Alex"
+  language: en
+
+episode:
+  season: 1
+  type: full
+  explicit: false
+
+title:
+  template: "#{number}: {title}"
+
+defaults:
+  keywords:
+    - Podcast
+    - Interview
+  locations:
+    subject:
+      search: "New York, United States"
+      type: Region
+    creator:
+      search: "United States"
+      type: Country
+
+transcript:
+  wait: true
+  apply_corrections: true
+
+corrections: {}
+
+description:
+  max_length: 4000
+  from_script: false
