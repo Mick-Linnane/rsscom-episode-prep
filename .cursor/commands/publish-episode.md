@@ -1,0 +1,1 @@
+Publish an episode draft to RSS.com. Find the latest or named episode folder under `episodes/`, run `make dry-run EPISODE=...` and show me the output. If everything looks good, ask for confirmation, then run `make publish EPISODE=...`. Never skip dry-run. Show me the dashboard URL from the output.

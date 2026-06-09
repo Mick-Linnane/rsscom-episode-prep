@@ -1,0 +1,37 @@
+show:
+  name: "Match Day Podcast"
+  host: "Alex"
+  language: en
+
+episode:
+  season: 1
+  type: full
+  explicit: false
+
+title:
+  template: "#{number}: {home_team} vs {away_team} — {tournament} {match_type}"
+
+defaults:
+  keywords:
+    - Sports
+    - Preview
+  locations:
+    subject:
+      search: "Chicago, United States"
+      type: Region
+    creator:
+      search: "United States"
+      type: Country
+
+transcript:
+  wait: true
+  apply_corrections: true
+
+corrections:
+  "Match Day Pod": "Match Day Podcast"
+  "home hawks": "Home Hawks"
+  "away eagles": "Away Eagles"
+
+description:
+  max_length: 4000
+  from_script: false

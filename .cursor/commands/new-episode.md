@@ -1,0 +1,1 @@
+Create a new episode folder for RSS.com prep. Follow the **new-episode** skill in `.cursor/skills/new-episode/SKILL.md`: ask for topic/guest if needed, scaffold `episodes/YYYY-MM-DD-slug/` from `templates/episode/`, draft `script.md` and `description.md`, then remind me to add my MP3 and run `make dry-run` before `make publish`.
